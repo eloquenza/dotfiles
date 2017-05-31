@@ -267,3 +267,7 @@ exec telegram-desktop
 exec skypeforlinux
 exec steam-native
 exec discord-ptb
+
+# auto start firefox, but it should not be permanently assigned to a workspace, move it
+# there explicitly
+exec --no-startup-id i3-msg 'workspace $w2; exec firefox; workspace $w1'
