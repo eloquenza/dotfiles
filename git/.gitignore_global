@@ -1,0 +1,7 @@
+# for docker-compose scripts or similar
+.env
+
+# Doxygen artifacts
+html/
+xml/
+latex/

@@ -1,0 +1,50 @@
+[user]
+	email = dennisgrabowski@gmx.de
+	name = Dennis Grabowski
+[push]
+	default = current
+[color]
+	ui = true
+[core]
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore_global
+[pull]
+	ff = only
+[merge]
+    tool = vimdiff
+    ff = false
+    log = 100
+	stat = true
+[mergetool]
+    prompt = true
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	branch-commits = "!f() { git log -p HEAD~$(git cherry $1 HEAD | wc -l)..HEAD; }; f"
+    log-branch-commits = "!f() { git log $@ HEAD~$(git cherry development HEAD | wc -l)..HEAD; }; f"
+	rebase-branch = "!f() { git rebase -i HEAD~$(git cherry $1 HEAD | wc -l) -v; }; f"
+	not-merged = "!f() { git branch -r -a --no-merged $1; }; f"
+	alias = "!git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
+    up = "!git remote update -p; git merge --ff-only @{u}"
+    graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+    show-tags-by-date = "!git log --tags --simplify-by-decoration --pretty='format:%C(green)%ai %C(red)%h %C(reset)%d'"
+    restore-deleted-file = "!git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file""
+    show-commits-for-file = "!f() { git log --all -- $1; }; f"
+    revert-file = "!git show $1 -- $2 | git apply --reverse"
+    partial-revert = "!git checkout -p $1^ -- $2"
+[submodule]
+	fetchJobs = 4
+[interactive]
+	diffFilter = diff-so-fancy
+[pager]
+	diff = diff-so-fancy | less
+[diff]
+	indentHeuristic = true
+	mnemonicprefix = true
+[commit]
+	verbose = true
+[status]
+	showUntrackedFiles = all
