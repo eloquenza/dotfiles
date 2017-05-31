@@ -1,0 +1,45 @@
+set bell-style visible
+
+$if mode=vi
+    set keymap vi-command
+    "gg": beginning-of-history
+    "G": end-of-history
+    set keymap vi-insert
+    "jj": vi-movement-mode
+    "\C-w": backward-kill-word
+    "\C-p": history-search-backward
+$endif
+
+# Use the text that has already been typed as the prefix for searching through
+# commands (i.e. more intelligent Up/Down behavior)
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Completion tweaks
+
+# Perform file completion in a case insensitive fashion
+set completion-ignore-case on
+# Treat hyphens and underscores as equivalent
+set completion-map-case on
+# Display matches for ambiguous patterns at first tab press
+set show-all-if-ambiguous on
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+set match-hidden-files on
+# set visible-stats on
+set skip-completed-text on
+set colored-stats on
+
+# Allow UTF-8 input and output
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Bash-specific mappings and settings
+$if Bash
+# Enable history expansion with space
+# E.g. typing !!<space> will replace the !! with your last command
+  Space: magic-space
+  \C-w: backward-kill-word
+  "\C-n": menu-complete
+$endif
