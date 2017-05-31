@@ -1,7 +1,5 @@
 # dotfiles
 
----
-
 precious dotfiles!
 
 ## intro
