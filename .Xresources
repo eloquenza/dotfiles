@@ -1,0 +1,69 @@
+Xft.dpi: 92
+Xft.antialias: true
+Xft.hinting: false
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+URxvt*terminalName: rxvt-unicode-256color
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.scrollBar: false
+URxvt.borderless: true
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+/* fonts */
+URxvt.font:           xft:Hack:style=Regular:pixelsize=14,xft:Symbola
+URxvt.boldFont:       xft:Hack:style=Bold:pixelsize=14:weight=bold,xft:Symbola
+URxvt.italicFont:     xft:Hack:style=RegularOblique:pixelsize=14:slant=italic,xft:Symbola
+
+! solarized base colors
+#define S_black        #002b36
+#define S_darkblack        #073642
+#define S_green        #586e75
+#define S_yellow        #657b83
+#define S_blue         #839496
+#define S_cyan         #93a1a1
+#define S_darkgreen         #859900
+#define S_darkwhite         #eee8d5
+#define S_white         #fdf6e3
+#define S_darkyellow        #b58900
+#define S_orange        #cb4b16
+#define S_darkred           #dc322f
+#define S_darkmagenta       #d33682
+#define S_magenta        #6c71c4
+#define S_darkblue          #268bd2
+#define S_darkcyan          #2aa198
+! solarized special accents
+
+URxvt*background:            	S_black
+URxvt*foreground:            	S_blue
+URxvt*fadeColor:             	S_black
+URxvt*cursorColor:           	S_cyan
+URxvt*pointerColorBackground:	S_green
+URxvt*pointerColorForeground:	S_cyan
+
+*color0:                	S_darkblack
+*color8:                	S_black
+*color1:                	S_darkred
+*color9:                	S_orange
+*color2:                	S_darkgreen
+*color10:               	S_green
+*color3:                	S_darkyellow
+*color11:               	S_yellow
+*color4:                	S_darkblue
+*color12:               	S_blue
+*color5:                	S_darkmagenta
+*color13:              	S_magenta
+*color6:               	S_darkcyan
+*color14:              	S_cyan
+*color7:              	  	S_darkwhite
+*color15: 					S_white
