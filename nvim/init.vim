@@ -16,7 +16,7 @@ let g:instant_markdown_autostart = 0
 
 let g:user_emmet_install_global = 0
 
-let g:ale_statusline_format = ['ᴇ %d', '⚠ %d', '✔']
+let g:ale_statusline_format = ['E %d', 'W %d', '✔']
 
 let g:ale_echo_msg_error_str = 'Err'
 let g:ale_echo_msg_warning_str = 'War'
