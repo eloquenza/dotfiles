@@ -2,29 +2,6 @@
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 
-let g:python3_host_prog="/usr/bin/python"
-let g:python_host_prog="/usr/bin/python2"
-let g:plug_threads = 1
-
-let g:cpp_class_scope_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
-let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
-
-let g:user_emmet_install_global = 0
-
-let g:ale_statusline_format = ['E %d', 'W %d', '✔']
-
-let g:ale_echo_msg_error_str = 'Err'
-let g:ale_echo_msg_warning_str = 'War'
-let g:ale_echo_msg_format = '[%severity%] - [%linter%] %s'
-
-let g:airline_powerline_fonts = 1
-let g:airline_symbols_ascii = 1
-
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
@@ -70,6 +47,29 @@ Plug 'mattn/emmet-vim'
 Plug 'lervag/vimtex'
 
 call plug#end()
+
+let g:python3_host_prog="/usr/bin/python"
+let g:python_host_prog="/usr/bin/python2"
+let g:plug_threads = 1
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+
+let g:user_emmet_install_global = 0
+
+let g:ale_statusline_format = ['E %d', 'W %d', '✔']
+
+let g:ale_echo_msg_error_str = 'Err'
+let g:ale_echo_msg_warning_str = 'War'
+let g:ale_echo_msg_format = '[%severity%] - [%linter%] %s'
+
+let g:airline_powerline_fonts = 1
+let g:airline_symbols_ascii = 1
 
 call airline#parts#define_function('ALE', 'ALEGetStatusLine')
 call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
