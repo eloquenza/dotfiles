@@ -52,7 +52,7 @@ Plug 'mbbill/undotree'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer'}
+Plug 'oblitum/YouCompleteMe', { 'do': 'python ./install.py --system-boost --system-clang --clang-completer --gocode-completer --racer-completer' }
 Plug 'shougo/deoplete.nvim'
 Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-fugitive'
