@@ -24,6 +24,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mbbill/undotree'
+Plug 'kana/vim-operator-user'
 
 " code highlighting, linters and co
 Plug 'w0rp/ale'
@@ -36,9 +37,10 @@ Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 
-" language addons
+" cpp
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'drmikehenry/vim-headerguard'
+Plug 'rhysd/vim-clang-format'
 
 " html/css
 Plug 'mattn/emmet-vim'
