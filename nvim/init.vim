@@ -53,6 +53,7 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'oblitum/YouCompleteMe', { 'do': 'python ./install.py --system-boost --system-clang --clang-completer --gocode-completer --racer-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'shougo/deoplete.nvim'
 Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-fugitive'
