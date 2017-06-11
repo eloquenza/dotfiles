@@ -33,7 +33,10 @@ export MOZ_USE_OMTC=1
 # Fix CSGO mouse issues
 export SDL_VIDEO_X11_DGAMOUSE=0
 
-# Make steam not close to tray.
+# export socket path made available from systemd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+#Make steam not close to tray.
 # export STEAM_FRAME_FORCE_CLOSE=0
 
 ###############################################################################
