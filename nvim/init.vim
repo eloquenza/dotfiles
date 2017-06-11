@@ -25,6 +25,7 @@ Plug 'godlygeek/tabular'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mbbill/undotree'
 Plug 'kana/vim-operator-user'
+Plug 'metakirby5/codi.vim'
 
 " code highlighting, linters and co
 Plug 'w0rp/ale'
