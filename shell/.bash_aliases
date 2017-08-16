@@ -21,7 +21,6 @@ alias chgrp='chgrp --preserve-root'
 
 ## Misc
 
-alias pacman="pacman --color=always"
 alias shot="scrot ~/media/screenshots/`date +%y-%m-%d-%H:%M:%S`.png"
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias mount='mount | column -t'
