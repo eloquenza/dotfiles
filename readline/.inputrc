@@ -1,5 +1,9 @@
+$include /etc/inputrc
+
 set bell-style visible
 
+# enable vim mode in all readline applications
+set editing-mode vi
 $if mode=vi
     set keymap vi-command
     "gg": beginning-of-history
@@ -34,6 +38,10 @@ set colored-stats on
 set input-meta on
 set output-meta on
 set convert-meta off
+
+# ctrl + arrows for moving words in urxvt
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
 
 # Bash-specific mappings and settings
 $if Bash
