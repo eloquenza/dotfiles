@@ -26,6 +26,7 @@ alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias mount='mount | column -t'
 # Look for high priority errors in the systemd journal
 alias errors="sudo journalctl -p 0..3 -xn"
+alias weatherreport="curl wttr.in/"
 
 # only here due to an WM bug - seemed like a good trick, so lets keep it around just in case
 #alias maximize-dota2='xdotool windowactivate $(xdotool search dota2)'
