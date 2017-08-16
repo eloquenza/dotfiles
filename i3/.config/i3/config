@@ -264,7 +264,6 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/1428365872599.png
 exec kmail
 exec spotify
 exec telegram-desktop
-exec skypeforlinux
 exec steam-native
 exec discord-ptb
 
