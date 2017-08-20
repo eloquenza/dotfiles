@@ -85,7 +85,8 @@ set $mod Mod1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -e bash -c "tmux new-session"
+bindsym $mod+Return exec urxvt -e bash -c "tmux -q has-session -t $USER@$HOSTNAME && exec tmux attach-session -d -t $USER@$HOSTNAME || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 # kill focused window
 bindsym $mod+Shift+q kill

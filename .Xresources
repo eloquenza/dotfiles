@@ -25,6 +25,9 @@ URxvt.font:           xft:Hack:style=Regular:pixelsize=14,xft:Symbola
 URxvt.boldFont:       xft:Hack:style=Bold:pixelsize=14:weight=bold,xft:Symbola
 URxvt.italicFont:     xft:Hack:style=RegularOblique:pixelsize=14:slant=italic,xft:Symbola
 
+! enable urxvt perl extensions
+URxvt.perl-ext-common: tmux-cleanup
+
 ! solarized base colors
 #define S_black        #002b36
 #define S_darkblack        #073642
