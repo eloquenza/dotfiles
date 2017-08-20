@@ -266,7 +266,7 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/1428365872599.png
 exec spotify
 exec telegram-desktop
 exec steam-native
-exec thunderbird-beta
+exec thunderbird
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
