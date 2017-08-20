@@ -245,7 +245,7 @@ assign [class="TelegramDesktop"] "$w3"
 assign [class="skypeforlinux"] "$w3"
 assign [class="Steam"] "$w4"
 assign [class="discord"] "$w4"
-assign [class="kmail2"] "$w5"
+assign [class="Thunderbird"] "$w5"
 # workaround for spotify as it doesnt set WM_CLASS early enough
 # this is actually against the ICCCM specifications
 for_window [class="Spotify"] move to workspace "$w6"
@@ -261,11 +261,11 @@ for_window [class="feh"] floating enable
 exec_always feh --bg-scale ~/media/pictures/wallpaper/1428365872599.png
 
 # autostarting applications, automatically assigned to workspaces because of rules above
-exec kmail
 exec spotify
 exec telegram-desktop
 exec steam-native
 exec discord-ptb
+exec thunderbird-beta
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
