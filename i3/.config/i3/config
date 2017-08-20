@@ -220,6 +220,7 @@ gaps outer 0
 focus_follows_mouse no
 mouse_warping none
 no_focus [window_role="notification"]
+no_focus [window_type="notification"]
 
 ###########################################################################################
 # SPECIFIC WINDOW SETTINGS
