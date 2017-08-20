@@ -273,4 +273,4 @@ exec --no-startup-id i3-msg 'workspace $w2; exec firefox-nightly; workspace $w1'
 
 # auto start urxvt, but it should not be permanently assigned to a workspace, move it
 # there explicitly
-exec --no-startup-id i3-msg 'workspace $w1; exec urxvt'
+exec --no-startup-id i3-msg 'workspace $w1; exec urxvt -e bash -c "tmux new-session -n $USER -s $USER@$HOSTNAME'
