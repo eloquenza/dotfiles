@@ -211,7 +211,7 @@ bindsym $mod+r mode "resize"
 ###########################################################################################
 
 # Titlebar for all windows
-for_window [class=".*"] title_format "<span font='tewi 8'> ➤ %title</span>"
+for_window [class=".*"] title_format "<span font='Fira Sans 9'> ➤ %title</span>"
 for_window [window_role="pop-up"] floating enable
 
 # Gaps around the windows
@@ -267,6 +267,7 @@ exec spotify
 exec telegram-desktop
 exec steam-native
 exec thunderbird
+exec discord-ptb
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly

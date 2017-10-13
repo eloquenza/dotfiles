@@ -2,6 +2,17 @@
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 
+" build function for markdown-composer
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release
+    else
+      !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
@@ -14,7 +25,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
 Plug 'jceb/vim-orgmode'
-Plug 'suan/vim-instant-markdown'
 
 " vim improvements
 Plug 'ntpeters/vim-better-whitespace'
@@ -49,7 +59,15 @@ Plug 'mattn/emmet-vim'
 " latex
 Plug 'lervag/vimtex'
 
+" markdown
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
 call plug#end()
+
+" markdown-composer
+let g:markdown_composer_browser="firefox-nightly"
+let g:markdown_composer_external_renderer="pandoc -f markdown -t html"
+let g:markdown_composer_refresh_rate = 0
 
 let g:python3_host_prog="/usr/bin/python"
 let g:python_host_prog="/usr/bin/python2"
@@ -58,6 +76,7 @@ let g:plug_threads = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
+let g:vimtex_view_method = 'zathura'
 
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
@@ -293,6 +312,7 @@ set laststatus=2
 " Keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 
+let maplocalleader = " "
 let mapleader = " "
 nnoremap <SPACE> <Nop>
 
