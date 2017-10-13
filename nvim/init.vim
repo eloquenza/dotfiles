@@ -293,6 +293,7 @@ set laststatus=2
 " Keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 
+let maplocalleader = " "
 let mapleader = " "
 nnoremap <SPACE> <Nop>
 
