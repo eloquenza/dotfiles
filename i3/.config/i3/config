@@ -273,7 +273,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec spotify
 exec telegram-desktop
 exec steam-native
-exec thunderbird-beta
+exec thunderbird
 exec discord-ptb
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
