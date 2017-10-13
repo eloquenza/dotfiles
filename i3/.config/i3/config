@@ -264,6 +264,8 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/1428365872599.png
 # starting dolphin daemon to have it setup with the right environment
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
+# starting compton
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf -fb
 
 # autostarting applications, automatically assigned to workspaces because of rules above
 exec spotify
