@@ -13,6 +13,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+# let kde apps behave like it is a kde desktop
+export QT_QPA_PLATFORMTHEME=kde
+
 ## APPLICATION SPECIFIC EXPORTS
 
 #export TERM=screen-256color
