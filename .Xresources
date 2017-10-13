@@ -21,9 +21,9 @@ URxvt.internalBorder: 0
 URxvt.externalBorder: 0
 
 /* fonts */
-URxvt.font:           xft:Hack:style=Regular:pixelsize=14,xft:Symbola
-URxvt.boldFont:       xft:Hack:style=Bold:pixelsize=14:weight=bold,xft:Symbola
-URxvt.italicFont:     xft:Hack:style=RegularOblique:pixelsize=14:slant=italic,xft:Symbola
+URxvt.font:           xft:Fira Code:bold:pixelsize=14:hinting=true,xft:Symbola
+URxvt.italicFont:     xft:Fira Code:italic:pixelsize=14:hinting=true,xft:Symbola
+URxvt.boldFont:       xft:Fira Code:bold:pixelsize=14:hinting=true,xft:Symbola
 
 ! enable urxvt perl extensions
 URxvt.perl-ext-common: tmux-cleanup
