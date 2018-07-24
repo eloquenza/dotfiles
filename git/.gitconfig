@@ -37,8 +37,6 @@
     partial-revert = "!git checkout -p $1^ -- $2"
 [submodule]
 	fetchJobs = 4
-[interactive]
-	diffFilter = diff-so-fancy
 [pager]
 	diff = diff-so-fancy | less
 [diff]
