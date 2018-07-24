@@ -66,7 +66,7 @@ call plug#end()
 
 " markdown-composer
 let g:markdown_composer_browser="firefox-nightly"
-let g:markdown_composer_external_renderer="pandoc -f markdown -t html"
+let g:markdown_composer_external_renderer="pandoc -f markdown_github -t html --pdf-engine=xelatex"
 let g:markdown_composer_refresh_rate = 0
 
 let g:python3_host_prog="/usr/bin/python"
