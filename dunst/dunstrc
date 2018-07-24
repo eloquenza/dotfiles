@@ -301,6 +301,7 @@
 [history-ignore]
     # This notification will not be saved in history
     appname = Spotify
+    format = ""
     history_ignore = yes
 
 #[signed_on]
