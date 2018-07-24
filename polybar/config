@@ -252,7 +252,7 @@ click-left = if [ -e ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else ec
 ; Increase pomodoro time
 click-right = echo "$((`cut .pomodoro_session -d ' ' -f 1`+5)) 5" > .pomodoro_session
 ; Reduce pomodoro time
-click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session<Paste>
+click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
 
 [settings]
 screenchange-reload = true
