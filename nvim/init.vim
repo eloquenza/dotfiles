@@ -86,18 +86,20 @@ let g:instant_markdown_autostart = 0
 
 let g:user_emmet_install_global = 0
 
-let g:ale_statusline_format = ['E %d', 'W %d', '✔']
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = ">>"
+let g:ale_sign_warning = "--"
 
-let g:ale_echo_msg_error_str = 'Err'
-let g:ale_echo_msg_warning_str = 'War'
+let g:ale_echo_msg_error_str = 'ERR'
+let g:ale_echo_msg_warning_str = 'WAR'
 let g:ale_echo_msg_format = '[%severity%] - [%linter%] %s'
+let g:ale_statusline_format = ['E %d', 'W %d', 'TEST']
 
 let g:airline_powerline_fonts = 1
 let g:airline_symbols_ascii = 1
 
-call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-let g:airline_section_error = airline#section#create_right(['ALE'])
+let g:airline#extensions#ale#enabled = 1
 
 set completeopt-=preview
 let g:ycm_confirm_extra_conf = 0
