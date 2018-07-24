@@ -45,6 +45,9 @@ export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
 #Make steam not close to tray.
 # export STEAM_FRAME_FORCE_CLOSE=0
 
+# use keychain to handle ssh keys
+eval $(keychain --eval --noask --inherit any --confhost id_rsa_github)
+
 ###############################################################################
 # SHOPT SETTINGS
 ###############################################################################
