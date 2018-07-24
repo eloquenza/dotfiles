@@ -274,7 +274,8 @@ exec spotify
 exec telegram-desktop
 exec steam-native
 exec thunderbird
-exec discord-ptb
+
+exec --no-startup-id redshift-gtk
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
