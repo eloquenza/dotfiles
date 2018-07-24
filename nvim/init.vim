@@ -76,7 +76,10 @@ let g:plug_threads = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
-let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_method = 'general'
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
 
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
