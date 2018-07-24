@@ -27,12 +27,12 @@ line-size = 3
 
 padding-right = 0
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = pomodoro pkg pavolume xkeyboard memory cpu temperature powermenu date
+modules-right = pomodoro pkg pavolume xkeyboard memory cpu temperature powermenu date openweathermap
 
 tray-position = right
 tray-padding = 2
@@ -55,6 +55,7 @@ tray-maxsize = 22
 font-0 = Fira Sans:size=10:weight=bold;2
 font-1 = FuraMonoForPowerline Nerd Font:weight=regular:size=17;3
 font-2 = FuraCode Nerd Font:weight=regular:size=14;3
+font-3 = Weather Icons:size=12;3
 
 [global/wm]
 margin-top = 5
@@ -68,7 +69,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.blue}
 
 label-layout = %layout%
@@ -131,14 +132,14 @@ label-urgent-padding = 3
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.blue}
 label = %percentage%% %{F#268db2}|%{F-}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "%{F#268db2}|%{F-}  "
+format-prefix = " %{F#268db2}|%{F-}  "
 format-prefix-foreground = ${colors.blue}
 label = %percentage_used%% %{F#268db2}|%{F-}
 
@@ -168,9 +169,9 @@ label = %temperature-c% %{F#268db2}|%{F-}
 label-warn = %temperature-c% %{F#268db2}|%{F-}
 label-warn-foreground = ${colors.red}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
 ramp-foreground = ${colors.blue}
 
 [module/pkg]
@@ -186,7 +187,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = "  "
 label-open-foreground = ${colors.blue}
 label-close =  cancel
 label-close-foreground = ${colors.blue}
@@ -219,18 +220,10 @@ click-left = playerctl play-pause
 scroll-down = playerctl previous
 scroll-up = playerctl next
 
-[module/redshift]
-type = custom/script
-interval = 5
-label = %output% %{F#268db2}|%{F-}
-
-exec = ~/.config/polybar/redshift.sh
-click-left = redshift -x
-
 [module/pavolume]
 type = custom/script
 interval = 0.5
-label = %output% %{F#268db2}|%{F-}
+label = " %output% %{F#268db2}|%{F-}"
 exec = ~/.config/polybar/pavolume.sh
 click-right = exec pavucontrol
 click-left = ~/.config/polybar/pavolume.sh --togmute
@@ -243,7 +236,7 @@ type = custom/script
 exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty  --break  --length 5
 ; Use default symbols
 ;exec = pymodoro --length 5
-label = %output%
+label = "%output% "
 label-font = 3
 tail = true
 interval = 0
@@ -253,6 +246,15 @@ click-left = if [ -e ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else ec
 click-right = echo "$((`cut .pomodoro_session -d ' ' -f 1`+5)) 5" > .pomodoro_session
 ; Reduce pomodoro time
 click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
+
+[module/openweathermap]
+type = custom/script
+exec = ~/.config/polybar/openweathermap.sh
+interval = 600
+format-foreground = ${colors.white-alt}
+format-background = ${colors.fg-alt}
+format-prefix-foreground = ${colors.fg-alt}
+format-padding = 2
 
 [settings]
 screenchange-reload = true
