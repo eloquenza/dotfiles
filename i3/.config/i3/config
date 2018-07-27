@@ -276,6 +276,7 @@ exec steam-native
 exec thunderbird
 
 exec --no-startup-id redshift-gtk
+exec --no-startup-id nm-applet
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
