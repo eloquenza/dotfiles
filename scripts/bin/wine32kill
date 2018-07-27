@@ -1,0 +1,1 @@
+WINEPREFIX=/home/eloquenza/.wine32 WINEARCH=win32 WINEDEBUG=-all wineserver -k
