@@ -23,6 +23,11 @@ fixed-center = false
 background = ${colors.white-alt}
 foreground = ${colors.blue}
 
+border-left-size = 10
+border-right-size = 10
+border-top-size = 10
+border-color = #00000000
+
 ; not used to disable the separator between specific modules
 ;separator = "|"
 line-size = 3
@@ -61,8 +66,8 @@ font-2 = FuraCode Nerd Font:weight=regular:size=14;3
 font-3 = Weather Icons:size=12;3
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 [module/xwindow]
 type = internal/xwindow
