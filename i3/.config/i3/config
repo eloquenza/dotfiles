@@ -265,7 +265,7 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
 # starting compton
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf -fb
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf -b
 # starting polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
