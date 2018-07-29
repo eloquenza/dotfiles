@@ -350,8 +350,8 @@ nnoremap <F5> :UndotreeToggle<CR>
 nmap <F6> :TagbarToggle<CR>
 
 " jump to ale errors
-"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <Leader>k <Plug>(ale_previous_wrap)
+nmap <Leader>j <Plug>(ale_next_wrap)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 " Misc
