@@ -40,7 +40,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = pkg separator pavolume separator xkeyboard separator powermenu openweathermap date
+modules-right = pkg separator pavolume separator xkeyboard powermenu openweathermap date
 
 tray-position = right
 tray-padding = 2
@@ -83,11 +83,12 @@ blacklist-0 = num lock
 format = " <label-layout> <label-indicator>"
 format-foreground = ${colors.blue}
 
+label-layout-padding-right = 2
+
 label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-margin = 0
 label-indicator-background = ${colors.red}
 label-indicator-foreground = ${colors.white}
-label-indicator-underline = ${colors.red}
 
 [module/i3]
 type = internal/i3
@@ -194,18 +195,18 @@ exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 [module/powermenu]
 type = custom/menu
 
+format-padding = 2
 format-spacing = 1
+format-background = ${colors.blue}
+format-foreground = ${colors.white}
 
-label-open = " "
-label-open-foreground = ${colors.blue}
+label-open = "  "
 label-close =  cancel
-label-close-foreground = ${colors.blue}
 label-separator = |
-label-separator-foreground = ${colors.blue}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = "power off "
+menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 
 menu-1-0 = cancel
@@ -215,7 +216,7 @@ menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
-menu-2-1 = "cancel "
+menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 [module/music]
