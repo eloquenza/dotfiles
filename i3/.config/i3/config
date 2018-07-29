@@ -260,7 +260,7 @@ for_window [class="feh"] floating enable
 ###########################################################################################
 
 # setting background image
-exec_always feh --bg-scale ~/media/pictures/wallpaper/vulENEs.jpg
+exec_always feh --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg
 # starting dolphin daemon to have it setup with the right environment
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
