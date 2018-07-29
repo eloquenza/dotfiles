@@ -40,7 +40,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = pkg pavolume xkeyboard powermenu openweathermap date
+modules-right = pkg separator pavolume separator xkeyboard separator powermenu openweathermap date
 
 tray-position = right
 tray-padding = 2
@@ -68,6 +68,10 @@ font-2 = Weather Icons:size=12;3
 margin-top = 0
 margin-bottom = 0
 
+[module/separator]
+type = custom/text
+content = " | "
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -76,7 +80,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format = " <label-layout> <label-indicator> | "
+format = " <label-layout> <label-indicator>"
 format-foreground = ${colors.blue}
 
 label-indicator-padding = 2
@@ -183,7 +187,7 @@ ramp-foreground = ${colors.blue}
 type = custom/script
 interval = 600
 format = <label>
-label = "%output% | "
+label = %output%
 exec = ~/.config/polybar/checkupdate.sh
 exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 
@@ -228,7 +232,7 @@ scroll-up = playerctl next
 [module/pavolume]
 type = custom/script
 interval = 0.5
-label = "%output% | "
+label = %output%
 exec = ~/.config/polybar/pavolume.sh
 click-right = exec pavucontrol
 click-left = ~/.config/polybar/pavolume.sh --togmute
