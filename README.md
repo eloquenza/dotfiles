@@ -2,6 +2,8 @@
 
 precious dotfiles!
 
+![](screenshots/example.png)
+
 ## intro
 
 Loved `KDE Plasma`, loved `i3`.
@@ -30,7 +32,6 @@ With [polybar] as panel.
 * Shell: `bash`
 * Text editor: `neovim`
 * Browser: `firefox-nightly`
-
 
 ## special thanks
 
