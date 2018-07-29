@@ -84,5 +84,5 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
         daytime=" $(get_duration "$((sun_rise-now))")"
     fi
 
-    echo "%{T4}$(get_icon "$current_icon") %{T-}$current_temp$SYMBOL %{T4}$trend $(get_icon "$forecast_icon") %{T-}$forecast_temp$SYMBOL"
+    echo "%{T3}$(get_icon "$current_icon") %{T-}$current_temp$SYMBOL %{T3}$trend $(get_icon "$forecast_icon") %{T-}$forecast_temp$SYMBOL"
 fi
