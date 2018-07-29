@@ -5,8 +5,7 @@ precious dotfiles!
 ## intro
 
 Loved `KDE Plasma`, loved `i3`.
-Why not combine them?
-Well, that's what happened **here**.
+Used both combined, not completely fallen for `i3`.
 
 I swapped around a lot, but a few [r/unixporn] links motivated me to try out a combination of `KDE` & `i3`, most notable:
 * [KDE + i3 - A match made in heaven]
@@ -14,19 +13,24 @@ I swapped around a lot, but a few [r/unixporn] links motivated me to try out a c
 
 I always loved tilting window managers. `KDE Plasma` and its corresponding window manager `kwin` is not bad, but I wanted to improve my productivity and use my screen estate more efficiently. While I could have done this too with a window tiler like [QuickTile] (see
 [ArchWiki - List of applications#Window_tilers] for more), I preferred changing the window manager.
+After getting used to the workflow, I felt that I don't really need the KDE environment. So I have thrown it out.
 
-I am using [i3-gaps], there is also [i3-kde] which is supposed to work better with `KDE` due to some KDE related patches, but I haven't tried that (yet).
+Now I am only using [i3-gaps].
+With [polybar] as panel.
 
 ## setup
 
-* Browser: `firefox`
+* Window manager: [i3-gaps]
+* System panel: [polybar]
 * Compositor: `compton`
-* Font: `tewi & Hack`
+* Notification daemon: [dunst]
+* Font: `Fira Sans/Code`
 * Program launcher: `rofi`
-* Text editor: `neovim`
 * Terminal emulator: `urxvt`
 * Shell: `bash`
-* Window manager: `i3-gaps`
+* Text editor: `neovim`
+* Browser: `firefox-nightly`
+
 
 ## special thanks
 
@@ -45,3 +49,6 @@ I would like to thank [mohabaks] for his incredible i3 config, which I modified 
 [i3gaps-solarized]: https://www.reddit.com/r/unixporn/comments/5yhe1h/i3gaps_solarized/
 
 [ArchWiki - List of applications#Window_tilers]: https://wiki.archlinux.org/index.php/list_of_applications#Window_tilers
+
+[polybar]: https://github.com/jaagr/polybar
+[dunst]: https://github.com/dunst-project/dunst
