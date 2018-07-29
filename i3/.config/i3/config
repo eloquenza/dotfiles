@@ -211,7 +211,7 @@ bindsym $mod+r mode "resize"
 ###########################################################################################
 
 # Titlebar for all windows
-for_window [class=".*"] title_format "<span font='Fira Sans 9'><b> ➤ %title</b></span>"
+for_window [class=".*"] title_format "<span font='Fira Sans 10'><b> ➤ %title</b></span>"
 for_window [window_role="pop-up"] floating enable
 
 # Gaps around the windows
