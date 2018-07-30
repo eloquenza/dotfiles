@@ -17,7 +17,7 @@ white     =   ${xrdb:color7}
 white-alt =   ${xrdb:color15}
 base01    =   ${xrdb:color10}
 
-[bar/example]
+[bar/top]
 monitor = ${env:MONITOR:VGA-1}
 
 ; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
