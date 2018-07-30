@@ -13,6 +13,7 @@ magenta   =   ${xrdb:color5}
 cyan      =   ${xrdb:color6}
 white     =   ${xrdb:color7}
 white-alt =   ${xrdb:color15}
+base01    =   ${xrdb:color10}
 
 [bar/example]
 monitor = ${env:MONITOR:VGA-1}
