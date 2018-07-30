@@ -1,4 +1,6 @@
 [colors]
+; Values in the X resources db can be referenced
+; Colors are argb
 bg        =   ${xrdb:color0}
 bg-alt    =   #271c24
 fg        =   ${xrdb:color15}
@@ -17,25 +19,47 @@ base01    =   ${xrdb:color10}
 
 [bar/example]
 monitor = ${env:MONITOR:VGA-1}
+
+; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
+; the percentage can optionally be extended with a pixel offset like so:
+; 50%:-10, this will result in a width or height of 50% minus 10 pixels
 width = 100%
 height = 30
+
+; Prefer fixed center position for the `modules-center` block
+; When false, the center position will be based on the size of the other blocks.
 fixed-center = false
 
 background = ${colors.white-alt}
 foreground = ${colors.blue}
 
+; Values applied to all borders
+; Individual side values can be defined using:
+;   border-{left,top,right,bottom}-size
+;   border-{left,top,right,bottom}-color
 border-left-size = 10
 border-right-size = 10
 border-top-size = 10
 border-color = #00000000
 
 ; not used to disable the separator between specific modules
-;separator = "|"
+;separator = "|"i
+
+; Under-/overline pixel size and argb color
+; Individual values can be defined using:
+;   {overline,underline}-size
+;   {overline,underline}-color
 line-size = 4
 
+; Number of spaces to add at the beginning/end of the bar
+; Individual side values can be defined using:
+;   padding-{left,right}
 padding-left = 0
 padding-right = 0
 
+; Number of spaces to add before/after each module
+; Individual side values can be defined using:
+;   module-margin-{left,right}<Paste>
 module-margin-left = 0
 module-margin-right = 0
 
@@ -43,6 +67,7 @@ modules-left = i3
 modules-center = music
 modules-right = pkg separator pavolume separator xkeyboard powermenu openweathermap date separator_white
 
+; needs to be defined, else the tray is disabled.
 tray-position = right
 tray-padding = 2
 tray-background = ${colors.fg-alt}
@@ -50,9 +75,20 @@ tray-scale = 1.0
 tray-maxsize = 20
 ;tray-transparent = true
 
+; Restack the bar window and put it above the
+; selected window manager's root
+;
+; Fixes the issue where the bar is being drawn
+; on top of fullscreen window's
+;
+; Currently supported WM's:
+;   bspwm
+;   i3 (requires: `override-redirect = true`)
 ;wm-restack = bspwm
 ;wm-restack = i3
 
+; Tell the Window Manager not to configure the window.
+; Use this to detach the bar if your WM is locking its size/position.
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
@@ -100,7 +136,13 @@ label-indicator-foreground = ${colors.white}
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
 index-sort = true
+
+; Wrap around when reaching the first/last workspace
 wrapping-scroll = true
 fuzzy-match = true
 
@@ -164,6 +206,8 @@ label = %percentage_used%%
 type = internal/date
 interval = 5
 
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = "%{A1:~/.config/polybar/switch-to-mails.sh:} %A, %d.%m%{A}"
 time =  %H:%M
 label = %date% %time%
