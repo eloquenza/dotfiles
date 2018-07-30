@@ -164,7 +164,7 @@ label = %percentage_used%%
 type = internal/date
 interval = 5
 
-date =  %A, %b. %d
+date = "%{A1:~/.config/polybar/switch-to-mails.sh:} %A, %d.%m%{A}"
 time =  %H:%M
 label = %date% %time%
 label-font = 1
