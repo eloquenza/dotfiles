@@ -41,7 +41,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = pkg separator pavolume separator xkeyboard powermenu openweathermap date
+modules-right = pkg separator pavolume separator xkeyboard powermenu openweathermap date separator_white
 
 tray-position = right
 tray-padding = 2
@@ -72,6 +72,12 @@ margin-bottom = 0
 [module/separator]
 type = custom/text
 content = " | "
+
+[module/separator_white]
+type = custom/text
+content = "  |"
+content-foreground = ${colors.white-alt}
+content-background = ${colors.fg-alt}
 
 [module/xwindow]
 type = internal/xwindow
