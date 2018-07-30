@@ -228,12 +228,14 @@ menu-2-1-exec = menu-open-0
 
 [module/music]
 type = custom/script
-interval = 0.5
+tail = true
 
-label = %output:0:70:...%
-exec = ~/.config/polybar/mpris.sh
+label = %output%
+exec = "python ~/.config/polybar/spotipyClient.sh status"
+;exec = ~/.config/polybar/mpris.sh
 
 click-left = playerctl play-pause
+click-right = "source ~/.secrets/spotify_secrets; python ~/.config/polybar/spotipyClient.sh save_remove"
 scroll-down = playerctl previous
 scroll-up = playerctl next
 

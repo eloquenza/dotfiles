@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+source ~/.secrets/spotify_secrets
+
 # Terminate already running bar instances
 killall -q polybar
 

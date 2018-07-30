@@ -42,6 +42,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # make java apps feel & look like GTK
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
+source ~/.secrets/spotify_secrets
+
 #Make steam not close to tray.
 # export STEAM_FRAME_FORCE_CLOSE=0
 
