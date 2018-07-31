@@ -298,7 +298,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # autostarting applications, automatically assigned to workspaces because of rules above
 exec spotify
 exec telegram-desktop
-exec steam-native
+exec steam-native -no-browser -silent
 exec thunderbird
 
 exec --no-startup-id redshift-gtk
