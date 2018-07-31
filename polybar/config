@@ -107,7 +107,7 @@ margin-bottom = 0
 
 [module/separator]
 type = custom/text
-content = " | "
+content = "|"
 
 [module/separator_white]
 type = custom/text
@@ -123,19 +123,20 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format = " <label-layout> <label-indicator>"
+format = "<label-layout><label-indicator>"
 format-foreground = ${colors.blue}
 
-label-layout-padding-right = 2
+label-layout = " %layout% "
+label-layout-padding = 2
 
-label-indicator-padding = 2
+label-indicator-padding = 3
 label-indicator-margin = 0
 label-indicator-background = ${colors.red}
 label-indicator-foreground = ${colors.white}
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = "<label-state><label-mode>"
 
 ; Sort the workspaces by index instead of the default
 ; sorting that groups the workspaces by output
@@ -161,7 +162,7 @@ ws-icon-8 = 9;
 
 format-font = 0
 
-label-mode-padding = 2
+label-mode-padding = 3
 label-mode-foreground = ${colors.white-alt}
 label-mode-background = ${colors.red}
 
@@ -170,11 +171,11 @@ label-focused = %icon%
 label-focused-foreground = ${colors.white-alt}
 label-focused-background = ${colors.orange}
 label-focused-underline = ${colors.orange}
-label-focused-padding = 2
+label-focused-padding = 3
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
-label-unfocused-padding = 2
+label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
@@ -215,7 +216,7 @@ label-font = 1
 format-foreground = ${colors.white-alt}
 format-background = ${colors.fg-alt}
 format-prefix-foreground = ${colors.fg-alt}
-format-padding = 0
+format-padding = 1
 
 [module/temperature]
 type = internal/temperature
@@ -239,6 +240,7 @@ ramp-foreground = ${colors.blue}
 type = custom/script
 interval = 600
 format = <label>
+format-padding = 3
 label = %output%
 exec = ~/.config/polybar/checkupdate.sh
 exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
@@ -246,12 +248,12 @@ exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 [module/powermenu]
 type = custom/menu
 
-format-padding = 2
+format-padding = 3
 format-spacing = 1
 format-background = ${colors.blue}
 format-foreground = ${colors.white}
 
-label-open = "  "
+label-open = 
 label-close =  cancel
 label-separator = |
 
@@ -313,7 +315,7 @@ click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_s
 [module/openweathermap]
 type = custom/script
 exec = ~/.config/polybar/openweathermap.sh
-label = %output%
+label = " %output%"
 interval = 600
 format-foreground = ${colors.white-alt}
 format-background = ${colors.fg-alt}
