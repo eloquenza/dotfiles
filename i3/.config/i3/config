@@ -238,6 +238,7 @@ mode "$mode_gaps_outer" {
 
 # Titlebar for all windows
 for_window [class=".*"] title_format "<span font='Fira Sans 10'><b> ➤ %title</b></span>"
+for_window [class=".*"] border normal 4
 for_window [window_role="pop-up"] floating enable
 
 # Gaps around the windows
