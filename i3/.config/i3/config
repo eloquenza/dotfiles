@@ -241,7 +241,7 @@ for_window [class=".*"] title_format "<span font='Fira Sans 10'><b> ➤ %title</
 for_window [window_role="pop-up"] floating enable
 
 # Gaps around the windows
-gaps inner 10
+gaps inner 20
 gaps outer 0
 
 focus_follows_mouse no
