@@ -51,7 +51,7 @@ set_from_resource $darkblack   color0 	  #000000
 set_from_resource $sub         color12 	  #000000
 
 # Window colors           border    background   text            indicator    child_border
-client.focused            $white    $white       $darkblue       $white   $white
+client.focused            $white    $white       $darkblue       $white       $white
 client.focused_inactive   $black    $black       $sub            $darkblack   $darkblack
 client.unfocused          $black    $black       $sub            $darkblack   $darkblack
 client.urgent             $black    $black       $sub            $darkblack   $darkblack
