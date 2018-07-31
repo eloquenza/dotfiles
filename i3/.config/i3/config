@@ -304,6 +304,7 @@ exec thunderbird
 exec --no-startup-id redshift-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id pasystray
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
