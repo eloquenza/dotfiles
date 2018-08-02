@@ -22,6 +22,7 @@ SAVED_UNDERLINE = '%{u#cb4b16}'
 DEFAULT_UNDERLINE = '%{u-}'
 DEFAULT_COLOR = '%{F-}'
 SERVER_ADDRESS = '/tmp/spotifycl-socket'
+DIVIDER = '-'
 
 class Spotify:
 
@@ -217,8 +218,6 @@ class Spotify:
         icon = "" if playback_status == 'Playing' else ''
         color = ACTIVE_COLOR if playback_status == 'Playing' else INACTIVE_COLOR
         saved = SAVED_UNDERLINE if same_song and self.saved_track else DEFAULT_UNDERLINE
-        divider = '-'
-        self.output(f'{saved}{color}{icon} {artist} {divider} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
 
         if not same_song:
             self.last_title = title
@@ -230,9 +229,7 @@ class Spotify:
                 # Refresh access token
                 self.setup_spotipy()
                 self.update_saved_track(trackid=trackid)
-            if self.saved_track:
-                divider = '-'
-                self.output(f'{saved}{color}{icon} {artist} {divider} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
+        self.output(f'{saved}{color}{icon} {artist} {DIVIDER} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
 
     def update_saved_track(self, trackid: str):
         self.saved_track = self.spotipy.current_user_saved_tracks_contains(
