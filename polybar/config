@@ -126,7 +126,7 @@ blacklist-0 = num lock
 format = "<label-layout><label-indicator>"
 format-foreground = ${colors.blue}
 
-label-layout = " %layout% "
+label-layout = " %layout%  "
 label-layout-padding = 2
 
 label-indicator-padding = 3
