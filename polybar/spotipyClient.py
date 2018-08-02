@@ -95,18 +95,6 @@ class Spotify:
     def stop_server(self):
         self.server_loop.close()
 
-    def send_to_server(self, command: bytes):
-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        try:
-            sock.connect(SERVER_ADDRESS)
-        except socket.error:
-            raise
-
-        try:
-            sock.sendall(command)
-        finally:
-            sock.close()
-
     @property
     def metadata_status(self):
         spotify_properties = dbus.Interface(
@@ -250,6 +238,18 @@ class Spotify:
                 self.spotify = None
                 self.output('')
 
+def send_to_server(command: bytes):
+    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    try:
+        sock.connect(SERVER_ADDRESS)
+    except socket.error:
+        raise
+
+    try:
+        sock.sendall(command)
+    finally:
+        sock.close()
+
 @click.group()
 def cli():
     """Script for listening to Spotify over dbus and adding tracks to your library."""
@@ -264,8 +264,7 @@ def status():
 @cli.command()
 def save_remove():
     """Save/remove the currently playing song to/from your library."""
-    spotify = Spotify()
-    spotify.send_to_server(Spotify.SAVE_REMOVE)
+    send_to_server(Spotify.SAVE_REMOVE)
 
 if __name__ == '__main__':
     cli()
