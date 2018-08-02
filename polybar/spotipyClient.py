@@ -6,12 +6,14 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 import click
+
 import dbus
 import dbus.mainloop.glib
-import spotipy
-import spotipy.util as util
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
+
+import spotipy
+import spotipy.util as util
 from spotipy import SpotifyException
 
 INACTIVE_COLOR = '%{F#073642}'
