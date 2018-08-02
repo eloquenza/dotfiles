@@ -111,6 +111,15 @@ class Spotify:
         )
         return metadata, playback_status
 
+    def output_song_info(self):
+        metadata, playback_status = self.metadata_status
+        self.output_playback_status(
+            data={
+                'Metadata': metadata,
+                'PlaybackStatus': playback_status,
+            }
+        )
+
     def setup_spotipy(self):
         auth = util.prompt_for_user_token(
             username=os.environ.get('SPOTIFY_USERNAME'),
@@ -144,13 +153,7 @@ class Spotify:
             time.sleep(1)
             self.ignore = False
 
-            metadata, playback_status = self.metadata_status
-            self.output_playback_status(
-                data={
-                    'Metadata': metadata,
-                    'PlaybackStatus': playback_status,
-                }
-            )
+            self.output_song_info()
 
         except dbus.DBusException:
             self.output('Could not connect to spotify.')
@@ -177,13 +180,7 @@ class Spotify:
             )
 
             if self.empty_output:
-                metadata, playback_status = self.metadata_status
-                self.output_playback_status(
-                    data={
-                        'Metadata': metadata,
-                        'PlaybackStatus': playback_status,
-                    }
-                )
+                self.output_song_info()
 
         except dbus.DBusException:
             self.output('')
