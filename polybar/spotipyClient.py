@@ -57,7 +57,7 @@ class Spotify:
         self.freedesktop.connect_to_signal(
             "NameOwnerChanged",
             self.on_name_owner_changed,
-            arg0="org.mpris.MediaPlayer2.spotify"
+            arg0=Spotify.SPOTIFY_BUS
         )
 
         executor = ThreadPoolExecutor(max_workers=2)
@@ -243,7 +243,7 @@ class Spotify:
         self.output_playback_status(data)
 
     def on_name_owner_changed(self, name, old_owner, new_owner):
-        if name == 'org.mpris.MediaPlayer2.spotify':
+        if name == Spotify.SPOTIFY_BUS:
             if new_owner:
                 # Spotify was opened.
                 self.setup_properties_changed()
