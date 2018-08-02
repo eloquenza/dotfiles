@@ -17,14 +17,12 @@ from gi.repository import GLib
 from spotipy import SpotifyException
 from spotipy.oauth2 import SpotifyClientCredentials
 
-inactive_color = '%{F#073642}'
-active_color = '%{F#268bd2}'
-saved_underline = '%{u#cb4b16}'
-default_underline = '%{u-}'
-default_color = '%{F-}'
-
-server_address = '/tmp/spotifycl-socket'
-
+INACTIVE_COLOR = '%{F#073642}'
+ACTIVE_COLOR = '%{F#268bd2}'
+SAVED_UNDERLINE = '%{u#cb4b16}'
+DEFAULT_UNDERLINE = '%{u-}'
+DEFAULT_COLOR = '%{F-}'
+SERVER_ADDRESS = '/tmp/spotifycl-socket'
 
 class Spotify:
 
@@ -73,12 +71,12 @@ class Spotify:
 
     def _start_server(self):
         try:
-            os.unlink(server_address)
+            os.unlink(SERVER_ADDRESS)
         except OSError:
-            if os.path.exists(server_address):
+            if os.path.exists(SERVER_ADDRESS):
                 raise
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        sock.bind(server_address)
+        sock.bind(SERVER_ADDRESS)
         sock.listen(5)
 
         while True:
@@ -99,7 +97,7 @@ class Spotify:
     def send_to_server(self, command: bytes):
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         try:
-            sock.connect(server_address)
+            sock.connect(SERVER_ADDRESS)
         except socket.error:
             raise
 
@@ -142,10 +140,10 @@ class Spotify:
             try:
                 if remove:
                     self.spotipy.current_user_saved_tracks_delete(tracks=[trackid])
-                    self.output(f'{active_color}Removed from library!{default_color}')
+                    self.output(f'{ACTIVE_COLOR}Removed from library!{DEFAULT_COLOR}')
                 else:
                     self.spotipy.current_user_saved_tracks_add(tracks=[trackid])
-                    self.output(f'{active_color}Saved to library!{default_color}')
+                    self.output(f'{ACTIVE_COLOR}Saved to library!{DEFAULT_COLOR}')
             except SpotifyException:
                 if not retry:
                     # Refresh access token
@@ -218,10 +216,10 @@ class Spotify:
         same_song = title == self.last_title
 
         icon = "" if playback_status == 'Playing' else ''
-        color = active_color if playback_status == 'Playing' else inactive_color
-        saved = saved_underline if same_song and self.saved_track else default_underline
+        color = ACTIVE_COLOR if playback_status == 'Playing' else INACTIVE_COLOR
+        saved = SAVED_UNDERLINE if same_song and self.saved_track else DEFAULT_UNDERLINE
         divider = '-'
-        self.output(f'{saved}{color}{icon} {artist} {divider} {title}{default_color}{default_underline}')
+        self.output(f'{saved}{color}{icon} {artist} {divider} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
 
         if not same_song:
             self.last_title = title
@@ -235,7 +233,7 @@ class Spotify:
                 self.update_saved_track(trackid=trackid)
             if self.saved_track:
                 divider = '-'
-                self.output(f'{saved}{color}{icon} {artist} {divider} {title}{default_color}{default_underline}')
+                self.output(f'{saved}{color}{icon} {artist} {divider} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
 
 
     def update_saved_track(self, trackid: str):
