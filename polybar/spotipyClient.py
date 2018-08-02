@@ -33,7 +33,6 @@ class Spotify:
     SAVED_UNDERLINE = '%{u#cb4b16}'
     DEFAULT_UNDERLINE = '%{u-}'
     DEFAULT_COLOR = '%{F-}'
-    DIVIDER = '-'
 
     def __init__(self):
         DBusGMainLoop(set_as_default=True)
@@ -215,7 +214,7 @@ class Spotify:
                 # Refresh access token
                 self.setup_spotipy()
                 self.update_saved_track(trackid=trackid)
-        self.output(f'{saved}{color}{icon} {artist} {self.DIVIDER} {title}{self.DEFAULT_COLOR}{self.DEFAULT_UNDERLINE}')
+        self.output(f'{saved}{color}{icon} {artist} - {title}{self.DEFAULT_COLOR}{self.DEFAULT_UNDERLINE}')
 
     def update_saved_track(self, trackid: str):
         self.saved_track = self.spotipy.current_user_saved_tracks_contains(
