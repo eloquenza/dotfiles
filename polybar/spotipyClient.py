@@ -257,20 +257,17 @@ def cli():
     """Script for listening to Spotify over dbus and adding tracks to your library."""
     pass
 
-
 @cli.command()
 def status():
     """Follow the status of the currently playing song on Spotify."""
     spotify = Spotify()
     spotify.monitor()
 
-
 @cli.command()
 def save_remove():
     """Save/remove the currently playing song to/from your library."""
     spotify = Spotify()
     spotify.send_to_server(Spotify.SAVE_REMOVE)
-
 
 if __name__ == '__main__':
     cli()
