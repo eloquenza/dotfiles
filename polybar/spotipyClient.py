@@ -235,7 +235,6 @@ class Spotify:
                 divider = '-'
                 self.output(f'{saved}{color}{icon} {artist} {divider} {title}{DEFAULT_COLOR}{DEFAULT_UNDERLINE}')
 
-
     def update_saved_track(self, trackid: str):
         self.saved_track = self.spotipy.current_user_saved_tracks_contains(
             tracks=[trackid]
@@ -253,7 +252,6 @@ class Spotify:
                 # Spotify was closed.
                 self.spotify = None
                 self.output('')
-
 
 @click.group()
 def cli():
@@ -277,4 +275,3 @@ def save_remove():
 
 if __name__ == '__main__':
     cli()
-
