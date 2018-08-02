@@ -129,7 +129,7 @@ class Spotify:
 
     def save_remove(self, retry=False):
         try:
-            metadata, playback_status = self.metadata_status
+            metadata, _ = self.metadata_status
             trackid = metadata['mpris:trackid']
 
             self.ignore = True
