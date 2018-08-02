@@ -85,7 +85,7 @@ tray-maxsize = 20
 ;   bspwm
 ;   i3 (requires: `override-redirect = true`)
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ; Tell the Window Manager not to configure the window.
 ; Use this to detach the bar if your WM is locking its size/position.
