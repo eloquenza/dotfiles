@@ -2,9 +2,7 @@
 
 import os
 import socket
-import sys
 import time
-import traceback
 from concurrent.futures import ThreadPoolExecutor
 
 import click
@@ -15,7 +13,6 @@ import spotipy.util as util
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 from spotipy import SpotifyException
-from spotipy.oauth2 import SpotifyClientCredentials
 
 INACTIVE_COLOR = '%{F#073642}'
 ACTIVE_COLOR = '%{F#268bd2}'
