@@ -16,13 +16,7 @@ import spotipy
 import spotipy.util as util
 from spotipy import SpotifyException
 
-INACTIVE_COLOR = '%{F#073642}'
-ACTIVE_COLOR = '%{F#268bd2}'
-SAVED_UNDERLINE = '%{u#cb4b16}'
-DEFAULT_UNDERLINE = '%{u-}'
-DEFAULT_COLOR = '%{F-}'
 SERVER_ADDRESS = '/tmp/spotifycl-socket'
-DIVIDER = '-'
 
 class Spotify:
 
@@ -33,6 +27,13 @@ class Spotify:
     PROPERTIES_INTERFACE = 'org.freedesktop.DBus.Properties'
 
     SAVE_REMOVE = b'save'
+
+    INACTIVE_COLOR = '%{F#073642}'
+    ACTIVE_COLOR = '%{F#268bd2}'
+    SAVED_UNDERLINE = '%{u#cb4b16}'
+    DEFAULT_UNDERLINE = '%{u-}'
+    DEFAULT_COLOR = '%{F-}'
+    DIVIDER = '-'
 
     def __init__(self):
         DBusGMainLoop(set_as_default=True)
