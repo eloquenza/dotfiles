@@ -67,13 +67,13 @@ set $w5 5: mails
 set $w6 6: music
 set $w7 7: misc
 
-workspace "$w1" output HDMI1
-workspace "$w2" output VGA1
-workspace "$w3" output VGA1
-workspace "$w4" output VGA1
-workspace "$w5" output VGA1
-workspace "$w6" output VGA1
-workspace "$w7" output VGA1
+workspace "$w1" output DVI-D-0
+workspace "$w2" output DP-2
+workspace "$w3" output DP-2
+workspace "$w4" output DP-2
+workspace "$w5" output DP-2
+workspace "$w6" output DP-2
+workspace "$w7" output DP-2
 
 ###########################################################################################
 # KEYBINDINGS
