@@ -18,7 +18,7 @@ white-alt =   ${xrdb:color15}
 base01    =   ${xrdb:color10}
 
 [bar/top]
-monitor = ${env:MONITOR:VGA-1}
+monitor = ${env:MONITOR:DP-2}
 
 ; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
 ; the percentage can optionally be extended with a pixel offset like so:
