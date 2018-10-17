@@ -143,6 +143,8 @@ shopt -s cmdhist
 ##     file, thus finally making the history shared across terminal sessions.
 ##
 
+setxkbmap -option ctrl:swapcaps
+
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 ###############################################################################
