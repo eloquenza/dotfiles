@@ -1,0 +1,33 @@
+! ------------------------------------------------------------------------------
+!                      ROFI Settings
+! ------------------------------------------------------------------------------
+
+! General
+rofi.font:                Fira Code Bold 11
+rofi.fake-transparency:   true
+rofi.hide-scrollbar:      true
+rofi.autohint:            false
+rofi.antialias:           true
+rofi.terminal:            urxvt
+
+! Layout
+rofi.width:              30
+rofi.column:             4
+rofi.location:           0
+rofi.lines:              10
+rofi.padding:            20
+rofi.sidebar-mode:       false
+rofi.fullscreen:         false
+rofi.dpi:                96
+rofi.matching:           fuzzy
+
+! ------------------------------------------------------------------------------
+!                      ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled:      true
+! State                  'bg'     'fg'     'bgalt'  'hlbg'   'hlfg'
+rofi.color-normal:       #002b36, #839496, #002b36, #b58900, #002b36
+rofi.color-active:       #002b36, #4c544f, #002b36, #4c544f, #002b36
+rofi.color-urgent:       #002b36, #442216, #002b36, #442216, #002b36
+!                        'bg'     'bc'
+rofi.color-window:       #002b36, #fdf6e3
