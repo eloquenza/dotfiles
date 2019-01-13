@@ -36,6 +36,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mbbill/undotree'
 Plug 'kana/vim-operator-user'
 Plug 'metakirby5/codi.vim'
+Plug 'machakann/vim-highlightedyank'
+
 
 " code highlighting, linters and co
 Plug 'w0rp/ale'
