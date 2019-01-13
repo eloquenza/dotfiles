@@ -233,6 +233,15 @@ mode "$mode_gaps_outer" {
 }
 
 ###########################################################################################
+# MEDIA KEYS SETTINGS
+###########################################################################################
+
+bindsym XF86AudioPlay exec playerctl play
+bindsym Pause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+###########################################################################################
 # WINDOW SETTINGS
 ###########################################################################################
 
