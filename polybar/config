@@ -65,7 +65,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = pkg separator xkeyboard powermenu openweathermap date separator_white
+modules-right = separator xkeyboard powermenu openweathermap date separator_white
 
 ; needs to be defined, else the tray is disabled.
 tray-position = right
@@ -238,7 +238,7 @@ ramp-foreground = ${colors.blue}
 
 [module/pkg]
 type = custom/script
-interval = 600
+interval = 3600
 format = <label>
 format-padding = 3
 label = %output%
@@ -320,6 +320,7 @@ format-padding = 2
 
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
