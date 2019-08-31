@@ -234,7 +234,7 @@
     history = ctrl+grave
 
     # Context menu.
-    context = ctrl+shift+period
+    context = ctrl+shift+grave
 
 [frame]
     width = 1
