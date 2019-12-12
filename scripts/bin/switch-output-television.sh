@@ -13,11 +13,11 @@ VGA_STATUS=$(</sys/class/drm/card0/card0-DVI-D-1/status)
 HDMI_STATUS=$(</sys/class/drm/card0/card0-HDMI-A-2/status)
 
 # Check to see if our state log exists
-if [ ! -f /tmp/monitor ]; then
-    touch /tmp/monitor
+if [ ! -f ~/tmp/monitor ]; then
+    touch ~/tmp/monitor
     STATE=1
 else
-    STATE=$(</tmp/monitor)
+    STATE=$(<~/tmp/monitor)
 fi
 
 # The state log has the NEXT state to go to in it
@@ -25,6 +25,8 @@ fi
 # If monitors are disconnected, stay in state 1
 if [ "disconnected" == "$HDMI_STATUS" ]; then
     STATE=1
+else
+    STATE=2
 fi
 
 case $STATE in
@@ -45,4 +47,4 @@ case $STATE in
     STATE=1
 esac
 
-echo $STATE > /tmp/monitor
+echo $STATE > ~/tmp/monitor
