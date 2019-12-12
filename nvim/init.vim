@@ -43,7 +43,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'oblitum/YouCompleteMe', { 'do': 'python ./install.py --system-boost --system-clang --clang-completer --gocode-completer --racer-completer' }
+Plug 'valloric/YouCompleteMe', { 'do': 'python3 ./install.py --all --clangd-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'shougo/deoplete.nvim'
 Plug 'lyuts/vim-rtags'
@@ -82,6 +82,7 @@ let g:vimtex_view_method = 'general'
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_compiler_progname = 'nvr'
 
 let g:instant_markdown_slow = 1
 let g:instant_markdown_autostart = 0
