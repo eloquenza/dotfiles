@@ -44,6 +44,7 @@ export LESS_TERMCAP_us=$'\e[1;31m'
 
 # Smooth scroll in firefox
 export MOZ_USE_OMTC=1
+export MOZ_USE_XINPUT2=1
 
 # Fix CSGO mouse issues
 export SDL_VIDEO_X11_DGAMOUSE=0
