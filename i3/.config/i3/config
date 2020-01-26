@@ -285,14 +285,21 @@ assign [class="dota2"] "$w1"
 assign [class="TelegramDesktop"] "$w3"
 assign [class="skypeforlinux"] "$w3"
 assign [class="Steam"] "$w4"
-assign [class="discord"] "$w4"
+assign [class="discord"] "$w3"
 assign [class="Thunderbird"] "$w5"
 # workaround for spotify as it doesnt set WM_CLASS early enough
 # this is actually against the ICCCM specifications
 for_window [class="Spotify"] move to workspace "$w6"
 
+# Make more applications floating by default
 for_window [class="Pavucontrol"] floating enable
 for_window [class="feh"] floating enable
+for_window [instance="origin.exe"] floating enable
+
+# automatically start these applications in fullscreen
+# mostly here to avoid having to press $mod1 + f everything I play a game
+for_window [class="dota2"] fullscreen enable
+for_window [class="mpv"] fullscreen enable
 
 ###########################################################################################
 # AUTOSTART OF APPLICATIONS
