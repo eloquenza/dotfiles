@@ -65,7 +65,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = music
-modules-right = separator xkeyboard powermenu openweathermap date separator_white
+modules-right = xkeyboard powermenu openweathermap date separator_white
 
 ; needs to be defined, else the tray is disabled.
 tray-position = right
