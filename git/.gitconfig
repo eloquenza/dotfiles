@@ -28,7 +28,7 @@
 	rebase-branch = "!f() { git rebase -i HEAD~$(git cherry $1 HEAD | wc -l) -v; }; f"
 	not-merged = "!f() { git branch -r -a --no-merged $1; }; f"
 	alias = "!git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
-    up = "!git remote update -p; git merge --ff-only @{u}"
+    up = "!git pull --rebase --autostash"
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
     show-tags-by-date = "!git log --tags --simplify-by-decoration --pretty='format:%C(green)%ai %C(red)%h %C(reset)%d'"
     restore-deleted-file = "!git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file""
