@@ -26,6 +26,7 @@ export LC_MESSAGES=en_US.UTF-8
 
 # let kde apps behave like it is a kde desktop
 export QT_QPA_PLATFORMTHEME=kde
+export GTK_USE_PORTAL=1
 
 ## APPLICATION SPECIFIC EXPORTS
 
