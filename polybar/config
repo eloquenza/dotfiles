@@ -40,7 +40,7 @@ foreground = ${colors.blue}
 border-left-size = 20
 border-right-size = 20
 border-top-size = 20
-border-color = #00000000
+border-color = #000000000
 
 ; not used to disable the separator between specific modules
 ;separator = "|"i
@@ -98,7 +98,7 @@ wm-restack = i3
 ;scroll-down = i3wm-wsprev
 
 font-0 = Fira Sans:size=10:weight=bold;2
-font-1 = FuraCode Nerd Font:weight=regular:size=18;3
+font-1 = FuraCode Nerd Font:weight=regular:size=12;3
 font-2 = Weather Icons:size=12;3
 
 [global/wm]
@@ -253,8 +253,8 @@ format-spacing = 1
 format-background = ${colors.blue}
 format-foreground = ${colors.white}
 
-label-open = 
-label-close =  cancel
+label-open = 
+label-close =  cancel
 label-separator = |
 
 menu-0-0 = reboot
