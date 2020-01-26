@@ -259,6 +259,9 @@ mouse_warping none
 no_focus [window_role="notification"]
 no_focus [window_type="notification"]
 
+# show popup windows if they belong to the full screened application currently in focus
+popup_during_fullscreen smart
+
 ###########################################################################################
 # SPECIFIC WINDOW SETTINGS
 ###########################################################################################
