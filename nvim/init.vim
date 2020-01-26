@@ -316,7 +316,7 @@ set undolevels=500
 set undoreload=500
 
 " Use the OS clipboard by default
-set clipboard+=unnamedplus
+set clipboard=unnamed
 
 set laststatus=2
 
