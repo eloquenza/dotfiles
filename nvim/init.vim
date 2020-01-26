@@ -37,7 +37,8 @@ Plug 'mbbill/undotree'
 Plug 'kana/vim-operator-user'
 Plug 'metakirby5/codi.vim'
 Plug 'machakann/vim-highlightedyank'
-
+Plug 'tpope/vim-abolish'
+Plug 'sirver/ultisnips'
 
 " code highlighting, linters and co
 Plug 'w0rp/ale'
