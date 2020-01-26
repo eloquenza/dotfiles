@@ -30,7 +30,7 @@ class Spotify:
 
     INACTIVE_COLOR = '%{F#073642}'
     ACTIVE_COLOR = '%{F#268bd2}'
-    SAVED_UNDERLINE = '%{u#cb4b16}'
+    SAVED_UNDERLINE = '%{u#cb4b16}%{+u}'
     DEFAULT_UNDERLINE = '%{u-}'
     DEFAULT_COLOR = '%{F-}'
 
