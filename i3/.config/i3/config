@@ -311,7 +311,7 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg ~/media/p
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
 # starting picom
-exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b --no-fading-destroyed-argb --experimental-backends
+exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b
 # starting polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
