@@ -1,0 +1,114 @@
+configuration {
+    width:                          30;
+    lines:                          10;
+    font:                           "Fira Code Bold 11";
+    location:                       0;
+    show-icons:                     false;
+    terminal:                       "urxvt";
+    matching:                       "fuzzy";
+    sidebar-mode:                   false;
+    fullscreen:                     false;
+    dpi:                            96;
+    case-sensitive:                 true;
+    antialias:                      true;
+    autohint:                       false;
+}
+
+* {
+    base03:                         #002b36;
+    base02:                         #073642;
+    base01:                         #586e75;
+    base00:                         #657b83;
+    base0:                          #839496;
+    base1:                          #93a1a1;
+    base2:                          #eee8d5;
+    base3:                          #fdf6e3;
+    yellow:                         #b58900;
+    orange:                         #cb4b16;
+    red:                            #dc322f;
+    magenta:                        #d33682;
+    violet:                         #6c71c4;
+    blue:                           #268bd2;
+    cyan:                           #2aa198;
+    green:                          #859900;
+
+    background-color:               @base03;
+    background:                     @base03;
+    normal-background:              @background;
+    active-background:              @background;
+    urgent-background:              @background;
+
+    foreground:                     @base0;
+    normal-foreground:              @foreground;
+    active-foreground:              @foreground;
+    urgent-foreground:              @foreground;
+
+    text-color:                     @base1;
+    selected-text-color:            @orange;
+    urgent:                         @red;
+
+    border-color:                   @base3;
+}
+
+window {
+    background-color:               @background;
+    border:                         5;
+}
+
+prompt {
+    enabled:                        false;
+}
+
+entry  {
+    background-color:               @base02;
+    text-color:                     @base2;
+    border:                         0px 0px 1px 0px;
+}
+
+mainbox {
+    children:                       [ inputbar, listview ];
+    padding:                        20;
+}
+
+listview {
+    fixed-height:                   0;
+    columns:                        2;
+    layout:                         vertical;
+    scrollbar:                      true;
+}
+
+element {
+    orientation: vertical;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color:               @urgent;
+}
+
+element normal.active, element alternate.active {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+}
+
+element selected {
+    background-color:               @selected-text-color;
+    color:                          @base03;
+}
+
+element selected.urgent {
+    background-color:               @urgent;
+}
+
+element selected.active {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+}
+
+element-icon {
+    size:                           100%;
+}
+
+element-text {
+    text-color:                     inherit;
+    horizontal-align:               0.5;
+}
