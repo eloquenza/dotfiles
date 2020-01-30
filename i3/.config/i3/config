@@ -321,11 +321,12 @@ exec telegram-desktop
 exec steam-native -silent
 exec thunderbird
 
-exec --no-startup-id redshift-gtk
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-clipman
-exec --no-startup-id pasystray
-exec --no-startup-id indicator-kdeconnect
+exec redshift-gtk
+exec nm-applet
+exec xfce4-clipman
+exec pasystray
+exec indicator-kdeconnect
+exec --no-startup-id nvidia-settings --load-config-only
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
