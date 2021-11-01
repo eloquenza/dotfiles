@@ -286,10 +286,10 @@
 #    summary = "foobar"
 #    format = ""
 
-[history-ignore]
+[spotify-no-notification]
     # This notification will not be saved in history
     appname = Spotify
-    format = ""
+    skip_display = true
     history_ignore = yes
 
 #[signed_on]
