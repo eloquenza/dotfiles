@@ -15,6 +15,7 @@ from gi.repository import GLib
 import spotipy
 import spotipy.util as util
 from spotipy import SpotifyException
+from spotipy.oauth2 import SpotifyOAuth
 
 SERVER_ADDRESS = '/tmp/spotifycl-socket'
 
@@ -120,11 +121,14 @@ class Spotify:
         )
 
     def setup_spotipy(self):
-        auth = util.prompt_for_user_token(
-            username=os.environ.get('SPOTIFY_USERNAME'),
+#        auth = util.prompt_for_user_token(
+#            username=os.environ.get('SPOTIFY_USERNAME'),
+#            scope='user-library-read,user-library-modify'
+#        )
+        auth_manager = SpotifyOAuth(
             scope='user-library-read,user-library-modify'
         )
-        self.spotipy = spotipy.Spotify(auth=auth)
+        self.spotipy = spotipy.Spotify(auth_manager=auth_manager)
 
     def save_remove(self, retry=False):
         try:
