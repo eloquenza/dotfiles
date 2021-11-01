@@ -72,6 +72,10 @@ fzf-stash() {
   done
 }
 
+fzf-list-packages() {
+  pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+}
+
 ### Vagrant
 
 #List all vagrant boxes available in the system including its status, and try to access the selected one via ssh
