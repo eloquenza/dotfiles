@@ -1,12 +1,12 @@
 [user]
-	email = dennisgrabowski@gmx.de
-	name = Dennis Grabowski
+    email = dennisgrabowski@gmx.de
+    name = Dennis Grabowski
 [push]
-	default = current
+    default = current
 [color]
-	ui = true
+    ui = true
 [core]
-	editor = nvim
+    editor = nvim
     excludesfile = ~/.gitignore_global
 [pager]
     diff = delta
@@ -19,29 +19,29 @@
     plus-emph-color = "#33FF33"
     syntax-theme = Solarized (light)
 [diff]
-	indentHeuristic = true
-	mnemonicprefix = true
+    indentHeuristic = true
+    mnemonicprefix = true
 [commit]
-	verbose = true
+    verbose = true
 [pull]
-	ff = only
+    ff = only
 [merge]
     tool = vimdiff
     ff = false
     log = 100
-	stat = true
+    stat = true
 [mergetool]
     prompt = true
 [mergetool "vimdiff"]
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	branch-commits = "!f() { git log -p HEAD~$(git cherry $1 HEAD | wc -l)..HEAD; }; f"
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    branch-commits = "!f() { git log -p HEAD~$(git cherry $1 HEAD | wc -l)..HEAD; }; f"
     log-branch-commits = "!f() { git log $@ HEAD~$(git cherry development HEAD | wc -l)..HEAD; }; f"
-	rebase-branch = "!f() { git rebase -i HEAD~$(git cherry $1 HEAD | wc -l) -v; }; f"
-	not-merged = "!f() { git branch -r -a --no-merged $1; }; f"
-	alias = "!git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
+    rebase-branch = "!f() { git rebase -i HEAD~$(git cherry $1 HEAD | wc -l) -v; }; f"
+    not-merged = "!f() { git branch -r -a --no-merged $1; }; f"
+    alias = "!git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
     up = "!git pull --rebase --autostash"
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
     show-tags-by-date = "!git log --tags --simplify-by-decoration --pretty='format:%C(green)%ai %C(red)%h %C(reset)%d'"
@@ -50,8 +50,8 @@
     revert-file = "!git show $1 -- $2 | git apply --reverse"
     partial-revert = "!git checkout -p $1^ -- $2"
 [submodule]
-	fetchJobs = 4
+    fetchJobs = 4
 [status]
-	showUntrackedFiles = all
+    showUntrackedFiles = all
 [init]
     defaultBranch = main
