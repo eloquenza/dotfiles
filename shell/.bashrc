@@ -42,9 +42,13 @@ export LESS_TERMCAP_so=$'\e[0;34;36m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;31m'
 
-# Smooth scroll in firefox
+# Smooth scroll in Firefox
 export MOZ_USE_OMTC=1
 export MOZ_USE_XINPUT2=1
+# Enable hardware acceleration in Firefox
+export MOZ_ACCELERATED=1
+# Enable WebRender in Firefox
+export MOZ_WEBRENDER=1
 
 # Fix CSGO mouse issues
 export SDL_VIDEO_X11_DGAMOUSE=0
