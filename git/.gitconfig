@@ -16,8 +16,15 @@
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [delta]
-    plus-emph-color = "#33FF33"
+    line-numbers = true
+    side-by-side = true
+    navigate = true
+    hyperlinks = true
+    file-decoration-style = underline bold overline
+    hunk-header-style = line-number syntax
+    zero-style = syntax
     syntax-theme = Solarized (light)
+    plus-emph-color = "#33FF33"
 [diff]
     indentHeuristic = true
     mnemonicprefix = true
