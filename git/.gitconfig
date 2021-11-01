@@ -7,8 +7,22 @@
 	ui = true
 [core]
 	editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[delta]
+    plus-emph-color = "#33FF33"
+    syntax-theme = Solarized (light)
+[diff]
+	indentHeuristic = true
+	mnemonicprefix = true
+[commit]
+	verbose = true
 [pull]
 	ff = only
 [merge]
@@ -37,12 +51,7 @@
     partial-revert = "!git checkout -p $1^ -- $2"
 [submodule]
 	fetchJobs = 4
-[pager]
-	diff = diff-so-fancy | less
-[diff]
-	indentHeuristic = true
-	mnemonicprefix = true
-[commit]
-	verbose = true
 [status]
 	showUntrackedFiles = all
+[init]
+    defaultBranch = main
