@@ -1,17 +1,23 @@
 configuration {
-    width:                          30;
-    lines:                          10;
     font:                           "Fira Code Bold 11";
     location:                       0;
     show-icons:                     false;
     terminal:                       "urxvt";
     matching:                       "fuzzy";
     sidebar-mode:                   false;
-    fullscreen:                     false;
     dpi:                            96;
     case-sensitive:                 true;
+}
+
+window {
+    width:                          calc(30%);
     antialias:                      true;
+    fullscreen:                     false;
     autohint:                       false;
+}
+
+listview {
+    lines:                          6;
 }
 
 * {
