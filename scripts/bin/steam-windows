@@ -1,1 +1,0 @@
-WINEDEBUG=-all wine64 .wine/drive_c/Program\ Files/Steam/Steam.exe &> /dev/null

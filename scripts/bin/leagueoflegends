@@ -1,1 +1,0 @@
-WINEPREFIX="$HOME/.wine32" WINEARCH=win32 WINEDEBUG=-all wine ~/.wine/drive_c/LoL/LeagueClient.exe &> /dev/null
