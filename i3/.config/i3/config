@@ -233,13 +233,25 @@ mode "$mode_gaps_outer" {
 }
 
 ###########################################################################################
-# MEDIA KEYS SETTINGS
+# MEDIA KEYBINDS
 ###########################################################################################
 
 bindsym XF86AudioPlay exec playerctl play
 bindsym Pause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+###########################################################################################
+# NOTIFICATION KEYBINDS (Dunst)
+###########################################################################################
+# Close last notification displayed by dunst
+bindsym Control+Space exec dunstctl close
+# Close all notifications displayed by dunst
+bindsym Control+Shift+Space exec dunstctl close-all
+# Show the last notifcation closed from history
+bindsym Control+Grave exec dunstctl history
+# Open context menu to interact with the notifications via actions, if actions are possible
+bindsym Control=Shift+Grave exec dunstctl context
 
 ###########################################################################################
 # WINDOW SETTINGS
@@ -282,11 +294,17 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Assign specific applications/windows to specific workspaces
 assign [class="dota2"] "$w1"
+assign [class="wow.exe"] "$w1"
+
 assign [class="TelegramDesktop"] "$w3"
 assign [class="skypeforlinux"] "$w3"
-assign [class="Steam"] "$w4"
 assign [class="discord"] "$w3"
+
+assign [class="Steam"] "$w4"
+
 assign [class="Thunderbird"] "$w5"
+
+assign [class="agent.exe"] "$w6"
 # workaround for spotify as it doesnt set WM_CLASS early enough
 # this is actually against the ICCCM specifications
 for_window [class="Spotify"] move to workspace "$w6"
@@ -300,6 +318,7 @@ for_window [instance="origin.exe"] floating enable
 # mostly here to avoid having to press $mod1 + f everything I play a game
 for_window [class="dota2"] fullscreen enable
 for_window [class="mpv"] fullscreen enable
+for_window [class="wow.exe"] fullscreen enable
 
 ###########################################################################################
 # AUTOSTART OF APPLICATIONS
@@ -317,7 +336,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # autostarting applications, automatically assigned to workspaces because of rules above
 exec spotify
-exec telegram-desktop
+# exec telegram-desktop
 exec steam-native -silent
 exec thunderbird
 
