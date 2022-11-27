@@ -203,7 +203,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+g mode "resize"
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (global)
@@ -302,9 +302,9 @@ assign [class="discord"] "$w3"
 
 assign [class="Steam"] "$w4"
 
+assign [class="Mail"] "$w5"
 assign [class="Thunderbird"] "$w5"
 
-assign [class="agent.exe"] "$w6"
 # workaround for spotify as it doesnt set WM_CLASS early enough
 # this is actually against the ICCCM specifications
 for_window [class="Spotify"] move to workspace "$w6"
@@ -330,7 +330,7 @@ exec_always feh --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg ~/media/p
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
 # starting picom
-exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b --experimental-backends
+# exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b --experimental-backends --dbus
 # starting polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
