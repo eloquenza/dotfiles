@@ -59,8 +59,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # make java apps feel & look like GTK
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-#Make steam not close to tray.
-# export STEAM_FRAME_FORCE_CLOSE=0
+export PATH="${PATH}:/home/eloquenza/.local/bin/:/home/eloquenza/bin/AppImage"
 
 # use keychain to handle ssh keys
 eval $(keychain --eval --noask --inherit any --confhost id_rsa_github)
@@ -186,6 +185,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ -f /usr/share/fzf/key-bindings.bash ]; then
+. /usr/share/fzf/key-bindings.bash
+elif [ -f /usr/share/fzf/completion.bash ]; then
+. /usr/share/fzf/completion.bash
+fi
+
 ###############################################################################
 # MISCELLANEOUS
 ###############################################################################
@@ -199,9 +204,9 @@ PS1='[\u@\h \W]\$ '
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 source ~/.local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
