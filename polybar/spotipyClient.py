@@ -192,7 +192,7 @@ class Spotify:
         if self.ignore:
             return
 
-        metadata = data['Metadata']
+        metadata, playback_status = self.metadata_status
         artists = metadata['xesam:artist']
         artist = artists[0] if artists else None
 
@@ -201,7 +201,6 @@ class Spotify:
             return
 
         title = metadata['xesam:title']
-        playback_status = data['PlaybackStatus']
         same_song = title == self.last_title
 
         icon = "" if playback_status == 'Playing' else ''
