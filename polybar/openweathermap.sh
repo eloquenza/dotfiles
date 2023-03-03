@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ~/.secrets/openweathermap_secrets
+. ~/.secrets/openweathermap_secrets
 
 get_icon() {
     case $1 in
