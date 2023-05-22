@@ -282,14 +282,13 @@ bindsym XF86AudioPrev exec playerctl previous
 ###########################################################################################
 # NOTIFICATION KEYBINDS (Dunst)
 ###########################################################################################
-# Close last notification displayed by dunst
-bindsym Control+Space exec dunstctl close
-# Close all notifications displayed by dunst
-bindsym Control+Shift+Space exec dunstctl close-all
-# Show the last notifcation closed from history
-bindsym Control+Grave exec dunstctl history
+
 # Open context menu to interact with the notifications via actions, if actions are possible
-bindsym Control=Shift+Grave exec dunstctl context
+bindsym $mod+Shift+Home exec dunstctl action
+# Close all notifications displayed by dunst
+bindsym $mod+Shift+Prior exec dunstctl close-all
+# Show the last notifcation closed from history
+bindsym $mod+Shift+Next exec dunstctl history-pop
 
 ###########################################################################################
 # WINDOW SETTINGS
