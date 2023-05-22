@@ -84,20 +84,6 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Shift+Return exec urxvt -e bash -c "tmux new-session"
-bindsym $mod+Return exec urxvt -e bash -c "tmux -q has-session -t $USER@$HOSTNAME && exec tmux attach-session -d -t $USER@$HOSTNAME || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -231,6 +217,27 @@ mode "$mode_gaps_outer" {
 
         bindsym Escape mode "default"
 }
+
+###########################################################################################
+# GENERAL APPLICATION KEYBINDS
+###########################################################################################
+
+# start a terminal
+bindsym $mod+Shift+Return exec urxvt -e bash -c "tmux new-session"
+bindsym $mod+Return exec urxvt -e bash -c "tmux -q has-session -t $USER@$HOSTNAME && exec tmux attach-session -d -t $USER@$HOSTNAME || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# For taking screenshots
+bindsym $mod+Home exec flameshot gui
 
 ###########################################################################################
 # MEDIA KEYBINDS
