@@ -279,6 +279,8 @@ bindsym $mod+End exec playerctl -p spotify play-pause
 bindsym $mod+Prior exec playerctl -p spotify previous
 bindsym $mod+Next exec playerctl -p spotify next
 
+bindsym $mod+period exec --no-startup-id ~/.local/bin/scripts/switch-audio-output.sh
+
 ###########################################################################################
 # NOTIFICATION KEYBINDS (Dunst)
 ###########################################################################################
