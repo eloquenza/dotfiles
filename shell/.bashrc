@@ -60,7 +60,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # make java apps feel & look like GTK
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-export PATH="${PATH}:/home/eloquenza/.local/bin/:/home/eloquenza/bin/AppImage"
+# Add AppImage applications to $PATH
+export PATH="{$PATH}:/home/eloquenza/applications/AppImage/"
 
 # use keychain to handle ssh keys
 eval $(keychain --eval --noask --inherit any --confhost id_rsa_github)
