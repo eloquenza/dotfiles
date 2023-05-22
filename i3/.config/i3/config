@@ -274,10 +274,10 @@ bindsym $mod+Home exec flameshot gui
 # MEDIA KEYBINDS
 ###########################################################################################
 
-bindsym XF86AudioPlay exec playerctl play
-bindsym Pause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+# Requires playerctl to be installed
+bindsym $mod+End exec playerctl -p spotify play-pause
+bindsym $mod+Prior exec playerctl -p spotify previous
+bindsym $mod+Next exec playerctl -p spotify next
 
 ###########################################################################################
 # NOTIFICATION KEYBINDS (Dunst)
