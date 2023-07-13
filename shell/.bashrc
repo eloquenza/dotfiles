@@ -61,7 +61,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # Add AppImage applications to $PATH
-export PATH="{$PATH}:/home/eloquenza/applications/AppImage/"
+export PATH="${PATH}:/home/eloquenza/applications/AppImage/"
 
 # use keychain to handle ssh keys
 eval $(keychain --eval --noask --inherit any --confhost id_rsa_github)
