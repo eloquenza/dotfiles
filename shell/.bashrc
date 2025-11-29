@@ -6,6 +6,8 @@
 # EXPORTS
 ###############################################################################
 
+## LANGUAGE AND EDITOR EXPORTS
+
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -24,10 +26,37 @@ export LC_PAPER=de_DE.UTF-8
 export LC_TELEPHONE=de_DE.UTF-8
 export LC_MESSAGES=en_US.UTF-8
 
-# let kde apps behave like it is a kde desktop
-export QT_QPA_PLATFORMTHEME=kde
-export XDG_CURRENT_DESKTOP=KDE
-export GTK_USE_PORTAL=1
+## XDG DEFAULT DIR EXPORTS; not needed but to be explicit
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+## Fixes for applications that do not respect XDG yet
+
+export ANDROID_HOME="${XDG_DATA_HOME}/android"
+export ANSIBLE_HOME="${XDG_DATA_HOME}/ansible"
+export CABAL_CONFIG="${XDG_CONFIG_HOME}/cabal/config"
+export CABAL_DIR="${XDG_DATA_HOME}/cabal"
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export GRADLE_USER_HOME="${XDG_DATA_HOME}/gradle"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+export GTK_USE_PORTAL=0
+export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
+export HISTFILE="${XDG_STATE_HOME}/bash/history" # bash history
+export JUPTYER_CONFIG_DIR="${XDG_CONFIG_HOME}/jupyter"
+export KDEHOME="${XDG_CONFIG_HOME}/kde"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
+export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+export TEXMFHOME="${XDG_DATA_HOME}/texmf"
+export TEXMFVAR="${XDG_CACHE_HOME}/texlive/texmf-var"
+export TEXMFCONFIG="${XDG_CONFIG_HOME}/texlive/texmf-config"
+export TS3_CONFIG_DIR="${XDG_CONFIG_HOME}/ts3client"
+export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
+export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 ## APPLICATION SPECIFIC EXPORTS
 
@@ -51,20 +80,28 @@ export MOZ_ACCELERATED=1
 # Enable WebRender in Firefox
 export MOZ_WEBRENDER=1
 
-# Fix CSGO mouse issues
-export SDL_VIDEO_X11_DGAMOUSE=0
-
 # export socket path made available from systemd
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# make java apps feel & look like GTK
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+# Make sure we disable legacy cryptography support for Conda.
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 # Add AppImage applications to $PATH
-export PATH="${PATH}:/home/eloquenza/applications/AppImage/"
+export PATH="/home/eloquenza/applications/AppImage/:${PATH}"
+# Add cargo's bin folder to $PATH, in order to allow cargo-installed programs to be executed
+export PATH="/home/eloquenza/.local/share/cargo/bin:${PATH}"
+# Add local/bin to $PATH, for locally grown scripts
+export PATH="/home/eloquenza/.local/bin:${PATH}"
+
+export XDG_CURRENT_DESKTOP=GNOME
+
+# asdf related configs
+export ASDF_DATA_DIR="/home/eloquenza/.asdf"
+# add asdf shims to path
+export PATH="$ASDF_DATA_DIR/shims:${PATH}"
 
 # use keychain to handle ssh keys
-eval $(keychain --eval --noask --inherit any --confhost id_rsa_github)
+eval $(keychain --absolute --dir "${XDG_RUNTIME_DIR}/keychain" --eval --noask)
 
 ###############################################################################
 # SHOPT SETTINGS
@@ -212,3 +249,20 @@ POWERLINE_BASH_SELECT=1
 source ~/.local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

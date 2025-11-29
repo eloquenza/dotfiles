@@ -2,7 +2,7 @@
 
 # hardcoded, shouldn't change in PipeWire
 HEADSET_SINK_ID=$(pactl list short sinks | grep "alsa_output.usb" | cut -f 1)
-SPEAKER_SINK_ID=$(pactl list short sinks | grep "alsa_output.pci" | cut -f 1)
+SPEAKER_SINK_ID=$(pactl list short sinks | grep "alsa_output.pci" | grep "analog" |cut -f 1)
 
 PID=$(xdotool getwindowfocus getwindowpid)
 PIPEWIRE_CLIENT_ID=$(pactl list clients | grep -e 'object.serial' -e "application.process.id = \"${PID}\"" | grep -B 1 'application' | grep -oP '\d*' -m 1)

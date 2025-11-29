@@ -28,5 +28,10 @@ alias mount='mount | column -t'
 alias errors="sudo journalctl -p 0..3 -xn"
 alias weatherreport="curl wttr.in/"
 
+# few aliases to force specific config locations
+alias adb='HOME="${XDG_DATA_HOME}"/android adb'
+alias keychain='keychain --absolute --dir "${XDG_RUNTIME_DIR}/keychain"'
+alias yarn='yarn --use-yarnrc ${XDG_CONFIG_HOME}/yarn/config'
+
 # only here due to an WM bug - seemed like a good trick, so lets keep it around just in case
 #alias maximize-dota2='xdotool windowactivate $(xdotool search dota2)'

@@ -67,13 +67,17 @@ set $w5 5: mails
 set $w6 6: music
 set $w7 7: misc
 
-workspace "$w1" output DVI-D-0
-workspace "$w2" output DP-2
-workspace "$w3" output DP-2
-workspace "$w4" output DP-2
-workspace "$w5" output DP-2
-workspace "$w6" output DP-2
-workspace "$w7" output DP-2
+set $primaryMonitor DisplayPort-0
+set $secondaryMonitor DisplayPort-1
+#set $secondaryMonitor HDMI-A-0
+
+workspace "$w1" output "$secondaryMonitor"
+workspace "$w2" output "$primaryMonitor"
+workspace "$w3" output "$primaryMonitor"
+workspace "$w4" output "$primaryMonitor"
+workspace "$w5" output "$primaryMonitor"
+workspace "$w6" output "$primaryMonitor"
+workspace "$w7" output "$primaryMonitor"
 
 ###########################################################################################
 # KEYBINDINGS
@@ -340,9 +344,11 @@ assign [class="skypeforlinux"] "$w3"
 assign [class="discord"] "$w3"
 
 assign [class="Steam"] "$w4"
+assign [class="steam"] "$w4"
+assign [class="steamwebhelper"] "$w4"
 
 assign [class="Mail"] "$w5"
-assign [class="Thunderbird"] "$w5"
+assign [class="thunderbird"] "$w5"
 
 # workaround for spotify as it doesnt set WM_CLASS early enough
 # this is actually against the ICCCM specifications
@@ -364,12 +370,12 @@ for_window [class="wow.exe"] fullscreen enable
 ###########################################################################################
 
 # setting background image
-exec_always feh --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg ~/media/pictures/wallpaper/solarized_bg_flopped.jpg
+exec_always xrandr --output DisplayPort-0 --mode 3840x2160 --rate 160 --pos 0x0 --primary --output DisplayPort-1 --mode 2560x1440 --rate 144 --pos 3840x0 --dpi 163
+exec_always feh --no-fehbg --bg-scale ~/media/pictures/wallpaper/solarized_bg.jpg ~/media/pictures/wallpaper/solarized_bg_flopped.jpg
 # starting dolphin daemon to have it setup with the right environment
 # needed to get the right style used when starting dolphin from firefox
 exec --no-startup-id dolphin --daemon
-# starting picom
-exec_always --no-startup-id picom --config $HOME/.config/picom.conf -b --dbus
+exec_always --no-startup-id dunst
 # starting polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -381,10 +387,8 @@ exec thunderbird
 
 exec redshift-gtk
 exec nm-applet
-exec xfce4-clipman
 exec pasystray
-exec indicator-kdeconnect
-exec --no-startup-id nvidia-settings --load-config-only
+exec -no-startup-id udiskie
 
 # auto start firefox, but it should not be permanently assigned to a workspace, move it
 # there explicitly
