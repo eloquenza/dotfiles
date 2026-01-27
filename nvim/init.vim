@@ -15,10 +15,8 @@ endfunction
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
-
 " colorschemes
-Plug 'altercation/vim-colors-solarized'
+Plug 'shaunsingh/solarized.nvim'
 Plug 'chriskempson/base16-vim'
 
 " distraction free modes / org modes
@@ -38,42 +36,17 @@ Plug 'kana/vim-operator-user'
 Plug 'metakirby5/codi.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-abolish'
-Plug 'sirver/ultisnips'
 
 " code highlighting, linters and co
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/YouCompleteMe', { 'do': 'python3 ./install.py --all --clangd-completer' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'shougo/deoplete.nvim'
-Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 
-" cpp
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'drmikehenry/vim-headerguard'
-Plug 'rhysd/vim-clang-format'
-
-" html/css
-Plug 'mattn/emmet-vim'
-
-" latex
-Plug 'lervag/vimtex'
-
-" markdown
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-
 call plug#end()
 
-" markdown-composer
-let g:markdown_composer_browser="firefox-nightly"
-let g:markdown_composer_external_renderer="pandoc -f markdown_github -t html --pdf-engine=xelatex"
-let g:markdown_composer_refresh_rate = 0
-
-let g:python3_host_prog="/usr/bin/python"
-let g:python_host_prog="/usr/bin/python2"
+let g:python3_host_prog = '/usr/bin/python'
 let g:plug_threads = 1
 
 let g:cpp_class_scope_highlight = 1
@@ -207,7 +180,6 @@ autocmd FileType c,cpp,objc noremap <leader>ci :py clang-include-fixer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
 
 syntax enable
-set background=dark
 colorscheme solarized
 
 set encoding=utf8
